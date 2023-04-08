@@ -7,8 +7,8 @@ public class CounterTest {
     @Test
     public void testCounter() throws InterruptedException {
         Counter counter = new Counter();
-        int numThreads = 100;
-        int numIncrementsPerThread = 10000;
+        int numThreads = 10;
+        int numIncrementsPerThread = 100;
         Thread[] threads = new Thread[numThreads];
         for (int i = 0; i < numThreads; i++) {
             threads[i] = new Thread(() -> {

@@ -11,6 +11,7 @@ public class Counter {
         lock.lock();
         try {
             value++;
+            System.out.println(Thread.currentThread().getName() + ": " + value);
         } finally {
             lock.unlock();
         }
@@ -20,6 +21,7 @@ public class Counter {
         lock.lock();
         try {
             value--;
+            System.out.println(Thread.currentThread().getName() + ": " + value);
         } finally {
             lock.unlock();
         }
