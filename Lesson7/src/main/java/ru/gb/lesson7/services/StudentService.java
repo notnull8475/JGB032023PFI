@@ -30,7 +30,10 @@ public class StudentService {
 
     @Transactional
     public void updateStudent(Student student) {
-        repository.save(student);
+        Student s = repository.findById(student.getId()).orElse(new Student());
+        s.setName(student.getName());
+        s.setAge(student.getAge());
+        repository.save(s);
     }
 
     public void deleteStudent(long id) {
