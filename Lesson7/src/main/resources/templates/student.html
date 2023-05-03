@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, appUser-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student list</title>
+</head>
+<body>
+<h1>Student</h1>
+<form th:action="@{'/students/edit'}" th:object="${student}" method="post">
+    <h3>ID: <span th:text="${id}"/></h3><br>
+    <input type="hidden" th:value="${id}" th:field="*{id}" />
+    <br>
+    Имя: <input type="text" th:value="${name}" th:field="*{name}"/>
+    <br>
+    Возраст: <input type="number" th:value="${age}" th:field="*{age}"/>
+    <br>
+    <button type="submit">сохранить</button>
+</form>
+
+<br>
+
+<a href="/students">Вернуться</a>
+</body>
+</html>
